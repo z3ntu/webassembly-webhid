@@ -1,0 +1,12 @@
+WebHID via WebAssembly experiments
+
+How to compile:
+
+$ emcc test.c -s WASM=1 -o hello.html --js-library myLibrary.js
+
+$ emcc test2.c -O3 -s ASYNCIFY -s 'ASYNCIFY_IMPORTS=["js_get_devices"]' -s WASM=1 -o hello.html
+
+$ emcc test3.cpp -s ASYNCIFY -O3 --bind -o hello.html
+
+WebHID can be enabled at chrome://flags/#enable-experimental-web-platform-features
+Useful logs can be found at chrome://device-log
